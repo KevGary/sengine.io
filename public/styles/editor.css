@@ -1,0 +1,39 @@
+.ace_editor {
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 400px;
+}
+
+.submitButton {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.editor h1 {
+  text-align: center;
+  font-family: 'Muli', sans-serif;
+  font-weight: bolder;
+}
+
+.editor .subhead {
+  text-align: center;
+  font-family: 'Muli', sans-serif;
+  font-size: 1.25em;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.editor pre {
+  border: none;
+  border-radius: 0px;
+  font-style: normal;
+  font-family: 'Source Code Pro';
+  font-size: 16px;
+  overflow: auto;
+  background-color: black;
+  height: 400px;
+  color: limegreen;
+  text-align: start;
+  white-space: pre;
+}

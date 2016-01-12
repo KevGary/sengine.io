@@ -1,0 +1,29 @@
+.jumbotron {
+  margin-top: -21px;
+  height: 130%;
+  background-image: url(../images/laptop.jpg);
+  background-size: 115% auto;
+  background-position: 40% 65%;
+}
+
+.jumbotron h1 {
+  font-size: 4.5em;
+  font-family: 'Muli', sans-serif;
+  position: relative;
+  left: 430px;
+  top: -30px;
+}
+
+.jumbotron h2 {
+  font-weight: bolder;
+  font-family: 'Muli', sans-serif;
+  position: relative;
+  left: 360px;
+}
+
+.jumbotron p {
+  font-family: 'Muli', sans-serif;
+  position: relative;
+  left: 475px;
+  top: -20px;
+}
