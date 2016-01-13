@@ -3,15 +3,13 @@ path {
 }
 
 path:first-child {
-  fill: #f2f2f2 !important;
+  fill: #ddd !important;
 }
 
 circle {
   fill: none;
   pointer-events: none;
 }
-
-
 
 .q0-9 { fill: rgb(101, 185, 172); }
 .q1-9 { fill: rgb(150, 207, 198); }

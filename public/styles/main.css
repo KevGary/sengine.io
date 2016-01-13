@@ -9,7 +9,6 @@
 html {
   position: relative;
   background-color: #dddddd;
-
 }
 
 body {
@@ -35,6 +34,12 @@ html, body {
 .d3Append {
   margin: 0;
   height: 165px;
+}
+
+text.shadow {
+  stroke: white;
+  stroke-width: 3px;
+  opacity: 1;
 }
 
 .navbar {

@@ -15,7 +15,49 @@ var svg = d3.select(".d3Append").append("svg")
 
 var path = svg.append("g").selectAll("path");
 
-svg.append("text").attr("x", 475).attr("y", 110).attr("font-size", "70px").attr("font-weight", "bold").text("Sengine.io");
+// var filter = svg.append("defs").append("filter").attr("id", "dropshadow").attr("height", "130%");
+// filter.append("feGaussianBlur").attr("in", "SourceAlpha").attr("stdDeviation", "3")
+// filter.append("feOffset").attr("dx", "2").attr("dy", "2").attr("result", "offsetblur")
+// var merge = filter.append("feMerge");
+// merge.append("feMergeNode");
+// merge.append("feMergeNode").attr("in", "SourceGraphic");
+
+// filters go in defs element
+var defs = svg.append("defs");
+
+// create filter with id #drop-shadow
+// height=130% so that the shadow is not clipped
+var filter = defs.append("filter")
+    .attr("id", "drop-shadow")
+    .attr("height", "130%");
+
+// SourceAlpha refers to opacity of graphic that this filter will be applied to
+// convolve that with a Gaussian with standard deviation 3 and store result
+// in blur
+filter.append("feGaussianBlur")
+    .attr("in", "SourceAlpha")
+    .attr("stdDeviation", 5)
+    .attr("result", "blur");
+
+// translate output of Gaussian blur to the right and downwards with 2px
+// store result in offsetBlur
+filter.append("feOffset")
+    .attr("in", "blur")
+    .attr("dx", 5)
+    .attr("dy", 5)
+    .attr("result", "offsetBlur");
+
+// overlay original SourceGraphic over translated blurred opacity by using
+// feMerge filter. Order of specifying inputs is important!
+var feMerge = filter.append("feMerge");
+
+feMerge.append("feMergeNode")
+    .attr("in", "offsetBlur")
+feMerge.append("feMergeNode")
+    .attr("in", "SourceGraphic");
+
+svg.append("text").attr("x", 475).attr("y", 110).attr("font-size", "70px").attr("font-weight", "bold").attr("stroke-width", 2).style("filter", "url(#drop-shadow)").attr("class", "shadow").text("Sengine.io");
+svg.append("text").attr("x", 475).attr("y", 110).attr("font-size", "70px").attr("font-weight", "bold").attr("stroke-width", 2).style("filter", "url(#drop-shadow)").text("Sengine.io");
 
 svg.selectAll("circle")
     .data(vertices.slice(1))
