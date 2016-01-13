@@ -17,15 +17,7 @@ iframe {
 
 .refresh {
   width: 100%;
+  color: #ffffff !important;
+  background-color: rgb(72, 157, 145) !important; 
+  border-color: rgb(72, 157, 145) !important;
 }
-.glyphicon-refresh {
-/*  width: 100%;
-  height: 100%;
-*//*  font-size: 36px;
-*/}
-/*.metrics-title {
-  margin-top: 0px !important;
-}*/
-/*.refresh .glyphicon {
-  font-size: 40px;
-}*/
