@@ -99,10 +99,10 @@ app.controller('DocsController', function($scope) {
 app.controller('MetricsController', function($scope, httpFactory, API_URL) {
   var socket = io.connect('http://localhost:3000');
 
-  socket.emit('loadUsers');
-  socket.emit('loadUser', 'kev');
-  socket.emit('createUser', 'kev', 'yo');
-  socket.emit('deleteUser', 2);
+  // socket.emit('loadUsers');
+  // socket.emit('loadUser', 'kev');
+  // socket.emit('createUser', 'kev', 'yo');
+  // socket.emit('deleteUser', 2);
 
   // socket.emit('loadQuestions');
   // socket.emit('loadQuestion', 1);
@@ -113,18 +113,18 @@ app.controller('MetricsController', function($scope, httpFactory, API_URL) {
   // socket.emit('createAnswer', 1, 1, 'yo', 'ya');
 
 
-  socket.on('loadUsers', function (users) {
-    console.log(users); 
-    $scope.users = users;
-  });
-  socket.on('loadUser', function (user) {
-    console.log(user); 
-    $scope.user = user;
-  });
-  socket.on('createUser', function (user) {
-    console.log(user); 
-    $scope.user = user;
-  });
+  // socket.on('loadUsers', function (users) {
+  //   console.log(users); 
+  //   $scope.users = users;
+  // });
+  // socket.on('loadUser', function (user) {
+  //   console.log(user); 
+  //   $scope.user = user;
+  // });
+  // socket.on('createUser', function (user) {
+  //   console.log(user); 
+  //   $scope.user = user;
+  // });
 })
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider){
