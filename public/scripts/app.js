@@ -109,7 +109,10 @@ app.controller('DocsController', function($scope) {
   }, 50)
 })
 
-app.controller('MetricsController', function($scope, httpFactory, API_URL) {
+app.controller('MetricsController', function($scope, httpFactory, $route) {
+  $scope.refreshMetrics = function () {
+    $route.reload();
+  }
   setTimeout(function () {
     $scope.$apply(function () {
         $scope.showBar = true;;

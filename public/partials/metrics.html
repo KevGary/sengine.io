@@ -1,5 +1,12 @@
 <div class="metrics container text-center">
-  <h1 class="animated fadeInDown">Server Metrics</h1>
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
+      <h1 class="animated fadeInDown">Server Metrics</h1>
+    </div>
+    <div class="col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
+      <button class="refresh btn btn-primary btn-lg" ng-click="refreshMetrics()"><span class="glyphicon glyphicon-refresh" style="width: 100%;"></span></button>
+    </div>
+  </div>
 </div>
 <div ng-show="showBar" class="show-bar">
   <div class="container">
@@ -21,9 +28,9 @@
 <div ng-show="showFlag">
 <div class="container">
   <div style="height: 300px;" class="row">
-    <iframe id="1"style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/general-metrics"></iframe>
-    <iframe id="2"style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/memory"></iframe>
-    <iframe id="3"style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/disk-io-utilization"></iframe>
+    <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/general-metrics"></iframe>
+    <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/memory"></iframe>
+    <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/disk-io-utilization"></iframe>
   </div>
 </div>
 <div class="container">
