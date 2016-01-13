@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="styles/editor.css">
     <link rel="stylesheet" type="text/css" href="styles/hosting.css">
     <link rel="stylesheet" type="text/css" href="styles/docs.css">
+    <link rel="stylesheet" type="text/css" href="styles/hero.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/monokai.min.css">
@@ -26,8 +27,7 @@
     <base href="/">
   </head>
   <body>
-    <div class="hero">
-      <p class="animated fadeInLeft title text-center">Sengine.io</p>
+    <div class="d3Append">
     </div>
 
     <nav class="navbar navbar-inverse">
@@ -59,6 +59,8 @@
         <p class="text-muted">&copy; Chloe Alnaji | Kevin Gary</p>
       </div>
     </footer>
+    </div>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/generic.js"></script>
@@ -74,6 +76,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="scripts/hero.js"></script>
     <script>
       $('.start').css({"border-bottom": "2px solid #dddddd"});
       $('li').on('click', function() {

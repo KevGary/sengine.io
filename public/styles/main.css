@@ -32,18 +32,25 @@ li {
   font-size: 1.2em;
 }
 
-.hero {
+/*.hero {
   height: 165px;
-}
+  background-color: blue;
+*/
 
 .title {
   padding-top: 30px;
   font-size: 62px;
 }
 
+.d3Append {
+  margin: 0;
+  height: 165px;
+}
+
 .navbar {
  /* border-bottom: 1.65px solid orange;
   border-top: 1.65px solid orange;*/
+  top: 0;
   border-radius: 0;
   background-color: black;
   border: none;
