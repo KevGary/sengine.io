@@ -57,10 +57,12 @@ h1 {
 }
 
 text.shadow {
-  stroke: white;
+  stroke: #dddddd;
   stroke-width: 1.2px;
   opacity: 1;
 }
+
+
 
 .navbar {
   top: 0;
