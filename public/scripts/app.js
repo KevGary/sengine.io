@@ -112,7 +112,22 @@ app.controller('DocsController', function($scope) {
 app.controller('MetricsController', function($scope, httpFactory, API_URL) {
   setTimeout(function () {
     $scope.$apply(function () {
-        $scope.showFlag = true;;
+        $scope.showBar = true;;
+    });
+  }, 0)
+  setTimeout(function () {
+    $(".progress-bar").animate({
+      width: "100%"
+    }, 1000);
+  })
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showBar = false;;
+    });
+  }, 1000)
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFlag = true;
     });
   }, 3000)
   // var socket = io.connect('http://localhost:3000');

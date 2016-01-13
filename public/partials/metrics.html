@@ -1,37 +1,50 @@
-    <div class="container text-center">
-      <h1 class="animated fadeInDown">Server Metrics</h1>
-    </div>
-    <div ng-show="showFlag">
-    <div class="container">
-      <h2>General</h2>
-    </div>
-    <div ng-show="showFlag">
-    <div class="container">
-      <div style="height: 300px;" class="row">
-        <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/general-metrics"></iframe>
-        <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/memory"></iframe>
-        <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/disk-io-utilization"></iframe>
+<div class="metrics container text-center">
+  <h1 class="animated fadeInDown">Server Metrics</h1>
+</div>
+<div ng-show="showBar" class="show-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container">
-      <h2 style="">Requests</h2>
-    </div>
-    <div class="container">
-      <div style="height: 300px;" class="row">
-        <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/http-requests"></iframe>
-        <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/http-requests-size"></iframe>
-        <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/http-requests-total"></iframe>
-      </div>
-    </div>
-    <div class="container">
-      <h2 style="">Miscellaneous</h2>
-    </div>
-    <div class="container">
-      <div style="height: 300px;" class="row">
-        <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/scrape"></iframe>
-        <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/http-response"></iframe>
-        <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/node-procs"></iframe>
-      </div>  
-    </div>
-    </div>
-    </div>
+  </div>
+</div>
+<div ng-show="showFlag">
+<div class="container">
+  <h2>General</h2>
+</div>
+<div class="progress-bar"></div>
+<div ng-show="showFlag">
+<div class="container">
+  <div style="height: 300px;" class="row">
+    <iframe id="1"style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/general-metrics"></iframe>
+    <iframe id="2"style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/memory"></iframe>
+    <iframe id="3"style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/disk-io-utilization"></iframe>
+  </div>
+</div>
+<div class="container">
+  <h2 style="">Requests</h2>
+</div>
+<div class="container">
+  <div style="height: 300px;" class="row">
+    <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/http-requests"></iframe>
+    <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/http-requests-size"></iframe>
+    <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/http-requests-total"></iframe>
+  </div>
+</div>
+<div class="container">
+  <h2 style="">Miscellaneous</h2>
+</div>
+<div class="container">
+  <div style="height: 300px;" class="row">
+    <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/scrape"></iframe>
+    <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/http-response"></iframe>
+    <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/node-procs"></iframe>
+  </div>  
+</div>
+  </div>
+</div>

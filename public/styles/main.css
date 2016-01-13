@@ -1,7 +1,6 @@
 * {
   margin: 0;
-/*  color: white;
-*/}
+}
 
 * {
   font-family: 'Muli', sans-serif;
@@ -23,19 +22,10 @@ html, body {
   min-height: 100%;
 }
 
-li {
-/*  border-bottom: 2px solid #dddddd;
-*/}
-
 .lead {
   font-weight: 300;
   font-size: 1.2em;
 }
-
-/*.hero {
-  height: 165px;
-  background-color: blue;
-*/
 
 .title {
   padding-top: 30px;
@@ -48,8 +38,6 @@ li {
 }
 
 .navbar {
- /* border-bottom: 1.65px solid orange;
-  border-top: 1.65px solid orange;*/
   top: 0;
   border-radius: 0;
   background-color: black;
