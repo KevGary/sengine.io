@@ -21,6 +21,34 @@ app.filter('reverse', function() {
   };
 });
 
+//on body tag in index.html
+app.controller('GlobalController', function($scope, $location) {
+  $scope.currentTab = $location.path();
+  var start = '';
+  if($scope.currentTab == '/') {
+    start = '.root-nav';
+  }
+  if($scope.currentTab == '/editor') {
+    start = '.editor-nav';
+  }
+  if($scope.currentTab == '/hosting') {
+    start = '.hosting-nav';
+  }
+  if($scope.currentTab == '/docs') {
+    start = '.docs-nav';
+  }
+  if($scope.currentTab == '/metrics') {
+    start = '.metrics-nav';
+  }
+  // $('li').css({"border-bottom": "none"});
+  $(start).css({"border-bottom": "2px solid #dddddd"});  
+  $('li').on('click', function() {
+    $(start).css({"border-bottom": "none"});
+    $('li').css({"border-bottom": "none"});
+    $(this).css({"border-bottom": "2px solid #dddddd"});
+  })
+})
+
 app.controller('LandingController', function($scope) {
 
 })

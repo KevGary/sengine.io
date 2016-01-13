@@ -27,6 +27,7 @@
       <script src="/socket.io/socket.io.js"></script>
     <base href="/">
   </head>
+  <body ng-controller="GlobalController">
   <body>
     
     <div class="d3Append">
@@ -44,11 +45,11 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a class="start animated fadeInUp" href="/#/">About</a></li>
-            <li><a class="animated fadeInUp" href="/#editor">Editor</a></li>
-            <li><a class="animated fadeInUp" href="/#hosting">Hosting</a></li>
-            <li><a class="animated fadeInUp" href="/#docs">API Docs</a></li>
-            <li><a class="animated fadeInUp" href="/#metrics">Metrics</a></li>
+            <li><a class="root-nav animated fadeInUp" href="/#">About</a></li>
+            <li><a class="editor-nav animated fadeInUp" href="/#editor">Editor</a></li>
+            <li><a class="hosting-nav animated fadeInUp" href="/#hosting">Hosting</a></li>
+            <li><a class="docs-nav animated fadeInUp" href="/#docs">API Docs</a></li>
+            <li><a class="metrics-nav animated fadeInUp" href="/#metrics">Metrics</a></li>
           </ul>
         </div>
       </div>
@@ -82,12 +83,12 @@
     <script type="text/javascript" src="scripts/hero.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.3/ui-bootstrap.min.js"></script>
     <script>
-      $('.start').css({"border-bottom": "2px solid #dddddd"});
-      $('li').on('click', function() {
-        $('.start').css({"border-bottom": "none"});
-        $('li').css({"border-bottom": "none"});
-        $(this).css({"border-bottom": "2px solid #dddddd"});
-      })
+    //   $('.start').css({"border-bottom": "2px solid #dddddd"});
+    //   $('li').on('click', function() {
+    //     $('.start').css({"border-bottom": "none"});
+    //     $('li').css({"border-bottom": "none"});
+    //     $(this).css({"border-bottom": "2px solid #dddddd"});
+    //   })
     </script>
   </body>
 </html>
