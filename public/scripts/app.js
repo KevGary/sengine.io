@@ -21,6 +21,12 @@ app.filter('reverse', function() {
   };
 });
 
+//on body tag in index.html
+app.controller('GlobalController', function($scope, $location) {
+  $scope.currentTab = $location.path().split('/')[1];
+  console.log($scope.currentTab);
+})
+
 app.controller('LandingController', function($scope) {
 
 })
