@@ -32,13 +32,27 @@ html, body {
 }
 
 .d3Append {
-  margin: 0;
-  height: 165px;
+  /*margin: 0;*/
+  /*height: 165px;*/
+
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 10%; 
+  vertical-align: middle; 
+  overflow: hidden; 
+}
+
+.svg-content { 
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 text.shadow {
   stroke: white;
-  stroke-width: 3px;
+  stroke-width: 1.2px;
   opacity: 1;
 }
 

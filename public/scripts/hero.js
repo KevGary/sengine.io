@@ -1,5 +1,5 @@
-var width = 1400,
-    height = 165;
+var width = 550,
+    height = 50;
 
 var vertices = d3.range(100).map(function(d) {
   return [Math.random() * width, Math.random() * height];
@@ -9,8 +9,11 @@ var voronoi = d3.geom.voronoi()
     .clipExtent([[0, 0], [width, height]]);
 
 var svg = d3.select(".d3Append").append("svg")
-    .attr("width", width)
-    .attr("height", height)
+    // .attr("width", width)
+    // .attr("height", height)
+    .attr("viewBox", "0 0 500 500")
+    .attr("preserveAspectRatio", "xMinYMin")
+    .attr("class", "svg-content")
     .on("mousemove", function() { vertices[0] = d3.mouse(this); redraw(); });
 
 var path = svg.append("g").selectAll("path");
@@ -56,8 +59,8 @@ feMerge.append("feMergeNode")
 feMerge.append("feMergeNode")
     .attr("in", "SourceGraphic");
 
-svg.append("text").attr("x", 475).attr("y", 110).attr("font-size", "70px").attr("font-weight", "bold").attr("stroke-width", 2).style("filter", "url(#drop-shadow)").attr("class", "shadow").text("Sengine.io");
-svg.append("text").attr("x", 475).attr("y", 110).attr("font-size", "70px").attr("font-weight", "bold").attr("stroke-width", 2).style("filter", "url(#drop-shadow)").text("Sengine.io");
+svg.append("text").attr("x", 175).attr("y", 35).attr("font-size", "30px").attr("font-weight", "bold").attr("stroke-width", 2).style("filter", "url(#drop-shadow)").attr("class", "shadow").text("Sengine.io");
+svg.append("text").attr("x", 175).attr("y", 35).attr("font-size", "30px").attr("font-weight", "bold").attr("stroke-width", 2).text("Sengine.io");
 
 svg.selectAll("circle")
     .data(vertices.slice(1))
