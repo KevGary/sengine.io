@@ -26,7 +26,7 @@ app.controller('LandingController', function($scope) {
 })
 
 app.controller('EditorController', function($scope, httpFactory, reverseFilter) {
-
+  
   $scope.aceLoaded = function(_editor) {
     _editor.getSession().setUseWorker(false);
     _editor.renderer.session.doc.$lines[0] = "console.log('Hello world!');";
@@ -34,6 +34,24 @@ app.controller('EditorController', function($scope, httpFactory, reverseFilter) 
       fontSize: 16
     });
     $scope.currentEditorValue = _editor.getSession().doc.$lines.join('\n');
+    httpFactory.execute($scope.currentEditorValue)
+    .then(function success(response) {
+      console.log("RESPONSE: ", response);
+      var result = {};
+      if (response.data == "language not detected") {
+        result.output = "Error: Language not detected",
+        result.language = "N/A"
+      } else {
+        if (response.data.stdout != "") {
+          result.output = response.data.stdout.trim();
+        } 
+        if (response.data.stderr != "") {
+          result.output = response.data.stderr.trim();
+        }
+        result.language = response.data.language.trim();
+      }
+      $scope.results.push(result)
+    })
   }
 
   $scope.aceChanged = function(e) {

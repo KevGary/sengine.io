@@ -1,73 +1,82 @@
 <div class="docs container">
   <div class="row text-center">
     <div class="col-md-8 col-md-offset-2">
-      <h1>API DOCS</h1>
-      <h5>Our API allows developers to seamlessly leverage Sengine.io's REPL and hosting servers in their applications through simple http requests..
+      <h1>API Documentation</h1>
+      <h4 style="margin-bottom: 30px;">Our API allows developers to seamlessly leverage Sengine.io's REPL and hosting servers in their applications through simple http requests..
      <!--  Sengine.io's API currently provides two services, Execution and Hosting.  The API is easily consumable through simple http requests.  All requests 
 
-      Sengine.io leverages Docker to create a cloud-based execution environment which powers their two primary APIs: the Execution API and the Hosting API. We instantly run code in three languages using an isolated file system for a secure and reliable response, and can host static HTML content with the same technology. With only HTTP requests, anyone can consume our API to include  --></h5>
+      Sengine.io leverages Docker to create a cloud-based execution environment which powers their two primary APIs: the Execution API and the Hosting API. We instantly run code in three languages using an isolated file system for a secure and reliable response, and can host static HTML content with the same technology. With only HTTP requests, anyone can consume our API to include  --></h4>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h2>Execution API</h2>
-      <p>Execute JavaScript, Ruby, and Python code in its optimal runtime engine.  This may be used to power browser and mobile text editors, multiplayer code wars, blog tutorials, and more.</p>
+      <h4 style="margin-bottom: 20px;">Execute JavaScript, Ruby, and Python code in its optimal runtime engine.  This may be used to power browser and mobile text editors, multiplayer code wars, blog tutorials, and more.</h4>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <pre>http://sengine.io/v1/api/execute</pre>
-      <pre>{
-  "code": //code goes here as a string 
+  <div class="col-md-8 col-md-offset-2">
+    <pre>http://sengine.io/v1/api/execute</pre>
+    <pre>{
+  "data": //code goes here as a string 
 }</pre>
-    </div>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h2>Hosting API</h2>
-      <p>Instantly deploy and host static content for thirty minutes.  This may be used to power web eccentric text editors, drag-and-drop html/css/js applications, or even to preview your own applications in a production environment.</p>
+      <h4 style="margin-bottom: 20px;">Instantly deploy and host static content for thirty minutes.  This may be used to power web eccentric text editors, drag-and-drop html/css/js applications, or even to preview your own applications in a production environment.</h4>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <pre>http://sengine.io/v1/api/host</pre>
-      <pre>{
-  "code": //code goes here as a string
+  <div class="col-md-8 col-md-offset-2">
+    <pre>http://sengine.io/v1/api/host</pre>
+    <pre>{
+  "data": //code goes here as a string
 }</pre>
-    </div>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h2>Integration</h2>
-      <p>Provided below are examples of API calls, or http requests, for different front end frameworks and libraries.</p>
+      <h4>Provided below are examples of API calls, or http requests, for different front end frameworks and libraries.</h4>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h3>jQuery</h3>
-      <p>Using <a href="">$.ajax</a></p>
+      <h4>Using <a href="http://api.jquery.com/jquery.post/">$.ajax</a></h4>
     </div>
   </div>
   <div class="col-md-8 col-md-offset-2">
-    <pre>{
-  "code": //code goes here as a string
-}</pre>
+    <pre>$.ajax({
+  type: "POST",
+  url: "http://sengine.io/v1/api/execute",
+  data: {
+    "data": //code goes here as string
+  }
+});</pre>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h3>AngularJS</h3>
-      <p>Using <a href="">$http</a> and <a href="">$q</a> providers.</p>
+      <h4>Using <a href="https://docs.angularjs.org/api/ng/service/$http">$http</a> provider in a custom factory.</h4>
     </div>
   </div>
   <div class="col-md-8 col-md-offset-2">
-    <pre>{
-  "code": code //your code goes here
-}</pre>
+    <pre data-language="javascript">app.factory('httpFactory', function ($http) {
+  return {
+    execute: execute,
+    hostHTML: hostHTML
+  }
+  function execute(code) {
+    return $http.post('http://sengine.io/v1/api/execute/execute', {"data": code});
+  }
+  function hostHTML(code) {
+    return $http.post('http://sengine.io/v1/api/execute/host', {"data": code});
+  }
+});</pre>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h3>ReactJS</h3>
-      <p>whatever react uses.</p>
+      <h4>whatever react uses.</h4>
     </div>
   </div>
     <div class="col-md-8 col-md-offset-2">
