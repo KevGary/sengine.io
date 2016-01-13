@@ -66,10 +66,10 @@
     hostHTML: hostHTML
   }
   function execute(code) {
-    return $http.post('http://sengine.io/v1/api/execute/execute', {"data": code});
+    return $http.post('http://sengine.io/v1/api/execute/execute', {"data": //code goes here as string});
   }
   function hostHTML(code) {
-    return $http.post('http://sengine.io/v1/api/execute/host', {"data": code});
+    return $http.post('http://sengine.io/v1/api/execute/host', {"data": //code goes here as string});
   }
 });</pre>
   </div>
@@ -81,7 +81,7 @@
   </div>
     <div class="col-md-8 col-md-offset-2">
         <pre>{
-  "code": code //your code goes here
+  "data": //code goes here as string
 }</pre>
     </div>
 </div>
