@@ -2,3 +2,7 @@
   margin-left: 25px;
   margin-right: 25px;
 }
+
+.ng-hide-remove { 
+  animation: 0.5s fadeInUp ease;
+}

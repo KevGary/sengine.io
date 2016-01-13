@@ -1,31 +1,33 @@
 <div ng-cloak class="hosting container">
   <h1 class="animated fadeInDown">Instant Static Web Hosting</h1>
   <p class="animated fadeInDown subhead">Upload your static web files for instant temporary hosting powered by our API.</p>
-  <form name="form">
-    <div class="row container">
-      <div class="col-md-2 col-md-offset-3">
-        <span class="glyphicon glyphicon-cog"></span><br>
-        <p class="lead">Add your linked JavaScript files.</p>
-        <button class="btn btn-primary" ngf-select ng-model="files" ngf-multiple="true">Select JS Files</button>
+  <div ng-show="showFlag">
+    <form name="form">
+      <div class="row container">
+        <div class="col-md-2 col-md-offset-3">
+          <span class="glyphicon glyphicon-cog"></span><br>
+          <p class="lead">Add your linked JavaScript files.</p>
+          <button class="btn btn-primary" ngf-select ng-model="files" ngf-multiple="true">Select JS Files</button>
+        </div>
+        <div class="col-md-2">
+          <span class="glyphicon glyphicon-list-alt"></span><br>
+          <p class="lead">Upload your index HTML page.</p>
+          <button class="btn btn-primary" ngf-select ng-model="files">Select HTML File</button>
+        </div>
+        <div class="col-md-2">
+          <span class="glyphicon glyphicon-pencil"></span><br>
+          <p class="lead">Add your linked CSS stylesheets.</p>
+          <button class="btn btn-primary" ngf-select ng-model="files" ngf-multiple="true">Select CSS Files</button>
+        </div>
       </div>
-      <div class="col-md-2">
-        <span class="glyphicon glyphicon-list-alt"></span><br>
-        <p class="lead">Upload your index HTML page.</p>
-        <button class="btn btn-primary" ngf-select ng-model="files">Select HTML File</button>
-      </div>
-      <div class="col-md-2">
-        <span class="glyphicon glyphicon-pencil"></span><br>
-        <p class="lead">Add your linked CSS stylesheets.</p>
-        <button class="btn btn-primary" ngf-select ng-model="files" ngf-multiple="true">Select CSS Files</button>
-      </div>
-    </div>
-    <div ng-if="files" class="row">
+      <div ng-if="files" class="row">
 
-    </div>
-    <div class="row">
-      <div class="col-md-2 col-md-offset-5">
-        <button class="btn btn-warning" type="submit" ng-click="submit()">Host your page</button>
       </div>
-    </div>
-  </form>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+          <button class="btn btn-warning" type="submit" ng-click="submit()">Host your page</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

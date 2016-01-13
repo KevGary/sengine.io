@@ -26,7 +26,12 @@ app.controller('LandingController', function($scope) {
 })
 
 app.controller('EditorController', function($scope, httpFactory, reverseFilter) {
-  
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFlag = true;;
+    });
+  }, 0)
+
   $scope.aceLoaded = function(_editor) {
     _editor.getSession().setUseWorker(false);
     _editor.renderer.session.doc.$lines[0] = "console.log('Hello world!');";
@@ -89,11 +94,19 @@ app.controller('EditorController', function($scope, httpFactory, reverseFilter) 
 })
 
 app.controller('HostingController', function($scope, httpFactory, Upload) {
-
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFlag = true;;
+    });
+  }, 50)
 })
 
 app.controller('DocsController', function($scope) {
-
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFlag = true;;
+    });
+  }, 50)
 })
 
 app.controller('MetricsController', function($scope, httpFactory, API_URL) {

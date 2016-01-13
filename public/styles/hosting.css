@@ -25,3 +25,8 @@
 .hosting .col-md-2 {
   text-align: center;
 }
+
+
+.ng-hide-remove { 
+  animation: 0.5s fadeInUp ease;
+}
