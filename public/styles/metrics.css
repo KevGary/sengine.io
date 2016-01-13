@@ -16,10 +16,16 @@ iframe {
 }
 
 .refresh {
-/*  width: 100%;
-*/ 
+  width: 100%;
 }
-
+.glyphicon-refresh {
+/*  width: 100%;
+  height: 100%;
+*//*  font-size: 36px;
+*/}
+/*.metrics-title {
+  margin-top: 0px !important;
+}*/
 /*.refresh .glyphicon {
   font-size: 40px;
 }*/
