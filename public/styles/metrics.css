@@ -2,3 +2,7 @@ iframe {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
+
+.ng-hide-remove { 
+  animation: 0.5s fadeInUp ease;
+}

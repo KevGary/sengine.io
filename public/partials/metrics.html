@@ -1,9 +1,11 @@
     <div class="container text-center">
       <h1 class="animated fadeInDown">Server Metrics</h1>
     </div>
+    <div ng-show="showFlag">
     <div class="container">
       <h2>General</h2>
     </div>
+    <div ng-show="showFlag">
     <div class="container">
       <div style="height: 300px;" class="row">
         <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/general-metrics"></iframe>
@@ -30,4 +32,6 @@
         <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/http-response"></iframe>
         <iframe style="height: 300px;" class="col-lg-4 col-md-4 col-sm-12" src="http://104.236.15.225:3000/embed/node-procs"></iframe>
       </div>  
+    </div>
+    </div>
     </div>

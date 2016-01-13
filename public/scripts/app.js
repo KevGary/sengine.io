@@ -110,7 +110,12 @@ app.controller('DocsController', function($scope) {
 })
 
 app.controller('MetricsController', function($scope, httpFactory, API_URL) {
-  var socket = io.connect('http://localhost:3000');
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFlag = true;;
+    });
+  }, 3000)
+  // var socket = io.connect('http://localhost:3000');
 
   // socket.emit('loadUsers');
   // socket.emit('loadUser', 'kev');
