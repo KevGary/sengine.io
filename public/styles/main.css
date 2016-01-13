@@ -53,8 +53,8 @@ h1 {
 }
 
 text.shadow {
-  stroke: #ddd;
-  stroke-width: 2px;
+  stroke: #dddddd;
+  stroke-width: 1.2px;
   opacity: 1;
 }
 
