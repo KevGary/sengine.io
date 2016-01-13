@@ -13,15 +13,17 @@ iframe {
 
 .metrics h1 {
   font-weight: bold;
+  font-family: 'Muli', sans-serif;
 }
 
 .metricsHeader {
   font-style: italic;
+  font-family: 'Muli', sans-serif;
 }
 
 .refresh {
   width: 100%;
   color: #ffffff !important;
   background-color: rgb(72, 157, 145) !important; 
-  border-color: rgb(72, 157, 145) !important;
+  border-color: rgb(56, 122, 113) !important;
 }

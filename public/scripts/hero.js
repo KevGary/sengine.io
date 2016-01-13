@@ -59,8 +59,9 @@ feMerge.append("feMergeNode")
 feMerge.append("feMergeNode")
     .attr("in", "SourceGraphic");
 
-svg.append("text").attr("x", 175).attr("y", 35).attr("font-size", "30px").attr("font-weight", "bold").attr("stroke-width", 2).style("filter", "url(#drop-shadow)").attr("class", "shadow").text("Sengine.io");
+svg.append("text").attr("x", 175).attr("y", 35).attr("font-size", "30px").attr("font-weight", "bold").attr("stroke-width", 2).attr("class", "shadow").text("Sengine.io");
 svg.append("text").attr("x", 175).attr("y", 35).attr("font-size", "30px").attr("font-weight", "bold").attr("stroke-width", 2).text("Sengine.io");
+// .style("filter", "url(#drop-shadow)")
 
 svg.selectAll("circle")
     .data(vertices.slice(1))

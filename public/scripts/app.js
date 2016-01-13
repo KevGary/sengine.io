@@ -1,4 +1,4 @@
-var app = angular.module('sengineSite', ['ui.ace', 'ngMaterial', 'ngMessages', 'ngRoute', 'ngFileUpload']);
+var app = angular.module('sengineSite', ['ui.ace', 'ngMaterial', 'ngMessages', 'ngRoute', 'ngFileUpload', 'door3.css']);
 
 app.constant('API_URL', 'http://104.236.15.225:8080');
 
@@ -49,11 +49,13 @@ app.controller('GlobalController', function($scope, $location) {
   })
 })
 
-app.controller('LandingController', function($scope) {
-
+app.controller('LandingController', function($scope, $css) {
+    $css.add('fonts.css');
 })
 
-app.controller('EditorController', function($scope, httpFactory, reverseFilter) {
+app.controller('EditorController', function($scope, httpFactory, reverseFilter, $css) {
+  $css.remove('fonts.css');
+
   setTimeout(function () {
     $scope.$apply(function () {
         $scope.showFlag = true;;
@@ -121,7 +123,9 @@ app.controller('EditorController', function($scope, httpFactory, reverseFilter) 
 
 })
 
-app.controller('HostingController', function($scope, httpFactory, Upload) {
+app.controller('HostingController', function($scope, httpFactory, Upload, $css) {
+  $css.add('fonts.css');
+
   setTimeout(function () {
     $scope.$apply(function () {
         $scope.showFlag = true;;
@@ -129,7 +133,9 @@ app.controller('HostingController', function($scope, httpFactory, Upload) {
   }, 50)
 })
 
-app.controller('DocsController', function($scope) {
+app.controller('DocsController', function($scope, $css) {
+  $css.add('fonts.css');
+
   setTimeout(function () {
     $scope.$apply(function () {
         $scope.showFlag = true;;
@@ -137,7 +143,9 @@ app.controller('DocsController', function($scope) {
   }, 50)
 })
 
-app.controller('MetricsController', function($scope, httpFactory, $route) {
+app.controller('MetricsController', function($scope, httpFactory, $route, $css) {
+  $css.add('fonts.css');
+  
   $scope.refreshMetrics = function () {
     $route.reload();
   }

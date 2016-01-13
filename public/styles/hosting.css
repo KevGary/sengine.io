@@ -20,6 +20,11 @@
 .hosting span {
   font-size: 3em;
   margin-bottom: 10px;
+  color: white;
+}
+
+.hosting .lead {
+  font-family: 'Muli', sans-serif;
 }
 
 .hosting .col-md-2 {
@@ -29,22 +34,6 @@
 .host-page {
   width: 100%;
 }
-
-span {
-  color: white;
-}
-
-.btn-warning {
-  color: #ffffff !important;
-  background-color: rgb(203, 81, 58) !important; 
-  border-color: rgb(203, 81, 58) !important;
-}
-.btn-primary {
-  color: #ffffff !important;
-  background-color: rgb(101, 185, 172) !important; 
-  border-color: rgb(101, 185, 172) !important;
-}
-
 
 .ng-hide-remove { 
   animation: 0.5s fadeInUp ease;

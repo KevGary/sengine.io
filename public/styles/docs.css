@@ -2,6 +2,7 @@
   margin-left: 25px;
   margin-right: 25px;
   font-style: italic;
+  font-family: 'Muli', sans-serif;
 }
 
 .ng-hide-remove { 
@@ -10,19 +11,26 @@
 
 .docs h1 {
   font-weight: bold; 
+  font-family: 'Muli', sans-serif;
+}
+
+.docs h2 {
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
+}
+
+.docs h3 {
+  font-family: 'Muli', sans-serif;
 }
 
 .executionTitle {
   color: rgb(101, 185, 172);
-  font-weight: bold;
 }
 
 .hostingTitle {
-  font-weight: bold;
   color: rgb(203, 81, 58);
 }
 
 .integrationTitle {
   color: rgb(115, 192, 58);
-  font-weight: bold;
 }
