@@ -9,7 +9,7 @@
   <div ng-show="showFlag">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h2>Execution API</h2>
+      <h2>Execution</h2>
       <h4 style="margin-bottom: 20px;">Execute JavaScript, Ruby, and Python code in its optimal runtime engine.  This may be used to power browser and mobile text editors, multiplayer code wars, blog tutorials, and more.</h4>
     </div>
   </div>
@@ -21,8 +21,8 @@
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h2>Hosting API</h2>
-      <h4>style="margin-bottom: 20px;">Instantly deploy and host static content for thirty minutes.  This may be used to power web eccentric text editors, drag-and-drop html/css/js applications, or even to preview your own applications in a production environment.</h4>
+      <h2>Hosting</h2>
+      <h4 style="margin-bottom: 20px;">Instantly deploy and host static content for thirty minutes.  This may be used to power web eccentric text editors, drag-and-drop html/css/js applications, or even to preview your own applications in a production environment.</h4>
     </div>
   </div>
   <div class="col-md-8 col-md-offset-2">
@@ -50,6 +50,13 @@
   data: {
     "data": //code goes here as string
   }
+});
+$.ajax({
+  type: "POST",
+  url: "http://sengine.io/v1/api/host",
+  data: {
+    "data": //code goes here as string
+  }
 });</pre>
   </div>
   <div class="row">
@@ -65,10 +72,16 @@
     hostHTML: hostHTML
   }
   function execute(code) {
-    return $http.post('http://sengine.io/v1/api/execute/execute', {"data": //code goes here as string});
+    return $http.post('http://sengine.io/v1/api/execute/execute', 
+      {
+        "data": //code goes here as string
+      });  
   }
   function hostHTML(code) {
-    return $http.post('http://sengine.io/v1/api/execute/host', {"data": //code goes here as string});
+    return $http.post('http://sengine.io/v1/api/execute/host', 
+      {
+        "data": //code goes here as string
+      });
   }
 });</pre>
   </div>

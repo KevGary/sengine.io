@@ -1,12 +1,14 @@
-.jumbotron {
+.header-content {
   margin-top: -21px;
-  height: 130%;
-  background-image: url(../images/laptop.jpg);
-  background-size: 115% auto;
-  background-position: 40% 65%;
+/*  height: 130%;
+*//*  background-image: url(../images/laptop.jpg);
+*/  /*background-size: 115% auto;
+  background-position: 40% 65%;*/
+  background-color: #dddddd;
+  border: none;
 }
 
-.jumbotron h1 {
+.header-content h1 {
   font-size: 4.5em;
   font-family: 'Muli', sans-serif;
   position: relative;
@@ -14,14 +16,14 @@
   top: -30px;
 }
 
-.jumbotron h2 {
+.header-content h2 {
   font-weight: bolder;
   font-family: 'Muli', sans-serif;
   position: relative;
   left: 360px;
 }
 
-.jumbotron p {
+.header-content p {
   font-family: 'Muli', sans-serif;
   position: relative;
   left: 475px;

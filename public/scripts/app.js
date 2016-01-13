@@ -109,8 +109,31 @@ app.controller('DocsController', function($scope) {
   }, 50)
 })
 
-app.controller('MetricsController', function($scope, httpFactory, API_URL) {
-  var socket = io.connect('http://localhost:3000');
+app.controller('MetricsController', function($scope, httpFactory, $route) {
+  $scope.refreshMetrics = function () {
+    $route.reload();
+  }
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showBar = true;;
+    });
+  }, 0)
+  setTimeout(function () {
+    $(".progress-bar").animate({
+      width: "100%"
+    }, 1000);
+  })
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showBar = false;;
+    });
+  }, 3000)
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFlag = true;
+    });
+  }, 3000)
+  // var socket = io.connect('http://localhost:3000');
 
   // socket.emit('loadUsers');
   // socket.emit('loadUser', 'kev');
