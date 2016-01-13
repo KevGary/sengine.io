@@ -124,7 +124,7 @@ app.controller('MetricsController', function($scope, httpFactory, API_URL) {
     $scope.$apply(function () {
         $scope.showBar = false;;
     });
-  }, 1000)
+  }, 3000)
   setTimeout(function () {
     $scope.$apply(function () {
         $scope.showFlag = true;

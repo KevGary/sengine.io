@@ -8,7 +8,7 @@ iframe {
 }
 
 .show-bar {
-  animation: 0.7s fadeInDown ease;
+  animation: none;
 }
 
 .metrics h1 {
