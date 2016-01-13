@@ -57,7 +57,7 @@ h1 {
 }
 
 text.shadow {
-  stroke: white;
+  stroke: #dddddd;
   stroke-width: 2px;
   opacity: 1;
 }
