@@ -2,67 +2,67 @@
   <div class="row text-center">
     <div class="col-md-8 col-md-offset-2">
       <h1 class="animated fadeInDown">API Documentation</h1>
-      <h4 class="animated fadeInDown" style="margin-bottom: 30px;">Our API allows developers to seamlessly leverage Sengine.io's REPL and hosting services in their applications through simple http requests.
+      <h4 class="animated fadeInDown" style="margin-bottom: 30px;">Our API allows developers to seamlessly leverage Sengine.io's REPL and hosting services in their applications through simple HTTP requests.
     </h4>
     </div>
   </div>
   <div ng-show="showFlag">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h2>Execution</h2>
+      <h2 class="executionTitle">Execution</h2>
       <h4 style="margin-bottom: 20px;">Execute JavaScript, Ruby, and Python code in its optimal runtime engine.  This may be used to power browser and mobile text editors, multiplayer code wars, blog tutorials, and more.</h4>
     </div>
   </div>
   <div class="col-md-8 col-md-offset-2">
-    <pre>http://sengine.io/v1/api/execute</pre>
+    <pre>http://sengine.io/api/v1/execute</pre>
     <pre>{
   "data": //code goes here as a string 
 }</pre>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h2>Hosting</h2>
-      <h4 style="margin-bottom: 20px;">Instantly deploy and host static content for thirty minutes.  This may be used to power web eccentric text editors, drag-and-drop html/css/js applications, or even to preview your own applications in a production environment.</h4>
+      <h2 class="hostingTitle">Hosting</h2>
+      <h4 style="margin-bottom: 20px;">Instantly deploy and host static content for thirty minutes.  This may be used to power web eccentric text editors, drag-and-drop HTML/CSS/JS applications, or even to preview your own applications in a production environment.</h4>
     </div>
   </div>
   <div class="col-md-8 col-md-offset-2">
-    <pre>http://sengine.io/v1/api/host</pre>
+    <pre>http://sengine.io/api/v1/host</pre>
     <pre>{
   "data": //code goes here as a string
 }</pre>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h2>Integration</h2>
-      <h4>Provided below are examples of API calls, or http requests, for different front end frameworks and libraries.</h4>
+      <h2 class="integrationTitle">Integration</h2>
+      <h4>Provided below are examples of API calls to our service that utilize HTTP requests for different front end frameworks and libraries.</h4>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h3>jQuery</h3>
-      <h4>Using <a href="http://api.jquery.com/jquery.post/">$.ajax</a></h4>
+      <h4>Using <a href="http://api.jquery.com/jquery.post/">$.ajax</a>.</h4>
     </div>
   </div>
   <div class="col-md-8 col-md-offset-2">
     <pre>$.ajax({
   type: "POST",
-  url: "http://sengine.io/v1/api/execute",
+  url: "http://sengine.io/api/v1/execute",
   data: {
-    "data": //code goes here as string
+    "data": //code goes here as a string
   }
 });
 $.ajax({
   type: "POST",
-  url: "http://sengine.io/v1/api/host",
+  url: "http://sengine.io/api/v1/host",
   data: {
-    "data": //code goes here as string
+    "data": //code goes here as a string
   }
 });</pre>
   </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h3>AngularJS</h3>
-      <h4>Using <a href="https://docs.angularjs.org/api/ng/service/$http">$http</a> provider in a custom factory.</h4>
+      <h4>Using the <a href="https://docs.angularjs.org/api/ng/service/$http">$http</a> provider in a custom factory.</h4>
     </div>
   </div>
   <div class="col-md-8 col-md-offset-2">
@@ -72,15 +72,15 @@ $.ajax({
     hostHTML: hostHTML
   }
   function execute(code) {
-    return $http.post('http://sengine.io/v1/api/execute/execute', 
+    return $http.post('http://sengine.io/api/v1/execute', 
       {
-        "data": //code goes here as string
+        "data": //code goes here as a string
       });  
   }
   function hostHTML(code) {
-    return $http.post('http://sengine.io/v1/api/execute/host', 
+    return $http.post('http://sengine.io/api/v1/host', 
       {
-        "data": //code goes here as string
+        "data": //code goes here as a string
       });
   }
 });</pre>
@@ -88,13 +88,48 @@ $.ajax({
 <!--   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h3>ReactJS</h3>
-      <h4>whatever react uses.</h4>
+      <h4>Using <a href="https://facebook.github.io/react/docs/tutorial.html#fetching-from-the-server">$.ajax</a> from inside component methods.</h4>
     </div>
   </div>
     <div class="col-md-8 col-md-offset-2">
-        <pre>{
-  "data": //code goes here as string
-}</pre>
+        <pre>var ComponentExample = React.createClass({
+  ...
+  handleExecuteSubmit: function(code) {
+    $.ajax({
+      url: this.props.executeUrl,
+      dataType: 'json',
+      type: 'POST',
+      data: //code goes here as a string,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  handleHostSubmit: function(code) {
+    $.ajax({
+      url: this.props.hostUrl,
+      dataType: 'json',
+      type: 'POST',
+      data: //code goes here as a string,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  ...
+});
+
+ReactDOM.render(
+  &lt;ComponentExample executeUrl="http://sengine.io/v1/api/execute" 
+  hostUrl="http://sengine.io/v1/api/host" />,
+  document.getElementById('content')
+);</pre>
     </div>
   </div> -->
 </div>

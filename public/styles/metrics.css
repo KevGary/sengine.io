@@ -15,6 +15,10 @@ iframe {
   font-weight: bold;
 }
 
+.metricsHeader {
+  font-style: italic;
+}
+
 .refresh {
   width: 100%;
   color: #ffffff !important;
