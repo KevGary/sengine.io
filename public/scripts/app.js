@@ -197,5 +197,5 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     // .otherwise({
     //   redirectTo: '/page-not-found'
     // });
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 }]);
