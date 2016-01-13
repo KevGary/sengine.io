@@ -1,4 +1,9 @@
 iframe {
   padding-left: 0px !important;
   padding-right: 0px !important;
+  border-style: solid;
+}
+
+.metrics h1 {
+  font-weight: bold;
 }
