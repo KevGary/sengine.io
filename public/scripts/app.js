@@ -26,7 +26,12 @@ app.controller('LandingController', function($scope) {
 })
 
 app.controller('EditorController', function($scope, httpFactory, reverseFilter) {
-  
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFlag = true;;
+    });
+  }, 0)
+
   $scope.aceLoaded = function(_editor) {
     _editor.getSession().setUseWorker(false);
     _editor.renderer.session.doc.$lines[0] = "console.log('Hello world!');";
@@ -89,20 +94,28 @@ app.controller('EditorController', function($scope, httpFactory, reverseFilter) 
 })
 
 app.controller('HostingController', function($scope, httpFactory, Upload) {
-
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFlag = true;;
+    });
+  }, 50)
 })
 
 app.controller('DocsController', function($scope) {
-
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFlag = true;;
+    });
+  }, 50)
 })
 
 app.controller('MetricsController', function($scope, httpFactory, API_URL) {
   var socket = io.connect('http://localhost:3000');
 
-  socket.emit('loadUsers');
-  socket.emit('loadUser', 'kev');
-  socket.emit('createUser', 'kev', 'yo');
-  socket.emit('deleteUser', 2);
+  // socket.emit('loadUsers');
+  // socket.emit('loadUser', 'kev');
+  // socket.emit('createUser', 'kev', 'yo');
+  // socket.emit('deleteUser', 2);
 
   // socket.emit('loadQuestions');
   // socket.emit('loadQuestion', 1);
@@ -113,18 +126,18 @@ app.controller('MetricsController', function($scope, httpFactory, API_URL) {
   // socket.emit('createAnswer', 1, 1, 'yo', 'ya');
 
 
-  socket.on('loadUsers', function (users) {
-    console.log(users); 
-    $scope.users = users;
-  });
-  socket.on('loadUser', function (user) {
-    console.log(user); 
-    $scope.user = user;
-  });
-  socket.on('createUser', function (user) {
-    console.log(user); 
-    $scope.user = user;
-  });
+  // socket.on('loadUsers', function (users) {
+  //   console.log(users); 
+  //   $scope.users = users;
+  // });
+  // socket.on('loadUser', function (user) {
+  //   console.log(user); 
+  //   $scope.user = user;
+  // });
+  // socket.on('createUser', function (user) {
+  //   console.log(user); 
+  //   $scope.user = user;
+  // });
 })
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider){

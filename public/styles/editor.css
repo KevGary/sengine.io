@@ -37,3 +37,7 @@
   text-align: start;
   white-space: pre;
 }
+
+.ng-hide-remove { 
+  animation: 0.5s fadeInUp ease;
+}

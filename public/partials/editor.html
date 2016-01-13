@@ -1,22 +1,24 @@
 <div ng-cloak class="editor container">
   <h1 class="animated fadeInDown">Sandbox Text Editor</h1>
   <p class="animated fadeInDown subhead">Type code in JavaScript, Python, or Ruby and hit submit to watch our API return its output.</p>
-  <div class="row">
-    <div class="col-md-8">
-      <div ui-ace="{
-        theme: 'monokai',
-        mode: 'javascript',
-        onLoad: aceLoaded,
-        onChange: aceChanged
-      }">
+  <div ng-show="showFlag">
+    <div class="row">
+      <div class="col-md-8">
+        <div ui-ace="{
+          theme: 'monokai',
+          mode: 'javascript',
+          onLoad: aceLoaded,
+          onChange: aceChanged
+        }">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <pre><span ng-repeat="result in results.slice().reverse() track by $index" type="result.type" close="results.splice(index, 1)">&gt; {{result.output}}<br>language: {{result.language}}<br><br></span></pre>
       </div>
     </div>
-    <div class="col-md-4">
-      <pre><span ng-repeat="result in results.slice().reverse() track by $index" type="result.type" close="results.splice(index, 1)">&gt; {{result.output}}<br>language: {{result.language}}<br><br></span></pre>
+    <div class="submitButton row">
+      <button class="btn btn-warning" type="submit" ng-click="execute()">Submit Code</button>
+      <button class="btn btn-primary" type="submit" ng-click="clearTerminal()">Clear Terminal</button>
     </div>
-  </div>
-  <div class="submitButton row">
-    <button class="btn btn-warning" type="submit" ng-click="execute()">Submit Code</button>
-    <button class="btn btn-primary" type="submit" ng-click="clearTerminal()">Clear Terminal</button>
   </div>
 </div>
