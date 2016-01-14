@@ -17,10 +17,9 @@
   margin-bottom: 40px;
 }
 
-.hosting span {
+.hosting span.glyphicon {
   font-size: 3em;
   margin-bottom: 10px;
- /* color: white;*/
 }
 
 .hosting .lead {
@@ -28,13 +27,52 @@
 }
 
 .hosting .col-md-2 {
-  text-align: center;
+  /*text-align: center;*/ 
 }
 
 .host-page {
   width: 100%;
+  left: auto;
+  right: auto;
+  text-align: center;
 }
 
 .ng-hide-remove { 
   animation: 0.5s fadeInUp ease;
+}
+
+.fileLabel {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.inputField {
+  margin-top: 40px;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+  padding-top: 100px;
+}
+
+input[readonly] {
+  font-family: 'Muli', sans-serif !important;
+  background-color: white !important;
+  cursor: normal !important;
 }

@@ -78,9 +78,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/fileUpload.js"></script>
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="scripts/hero.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.3/ui-bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.7/angular-css.min.js"></script>
+    <script>
+    $(document).on('change', '.btn-file :file', function() {
+        var input = $(this);
+        var label = input.get(0).value.replace(/\\/g, '/').replace(/.*\//, '');
+        var information = $(this).parents('.input-group').find(':text');
+        information.val(label);
+        // console.log(input)
+        // console.log(document.getElementById('htmlFile').val())
+    });
+    </script>
   </body>
 </html>

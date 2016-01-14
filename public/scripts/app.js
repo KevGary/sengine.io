@@ -128,9 +128,40 @@ app.controller('HostingController', function($scope, httpFactory, Upload, $css) 
 
   setTimeout(function () {
     $scope.$apply(function () {
-        $scope.showFlag = true;;
+        $scope.showFlag = true;
     });
   }, 50)
+
+  $scope.showHTMLContent = function($fileContent){
+    $scope.htmlContent = $fileContent;
+  };
+  $scope.showJSContent = function($fileContent){
+    $scope.jsContent = $fileContent;
+  };
+  $scope.showCSSContent = function($fileContent){
+    $scope.cssContent = $fileContent;
+  };
+
+  $scope.submit = function() {
+    var tempElem = angular.element("<div>" + $scope.htmlContent + "</div>").css("display", "none");
+    // tempElem.style.display = "none";
+    // tempElem.innerHTML = $scope.htmlContent;
+    // angular.element(tempElem);
+    // console.log(angular.element(tempElem).html());
+    var head = angular.element(tempElem).find('head');
+    console.log(head);
+
+    if ($scope.cssContent) {
+      angular.element(tempElem).find("head").append("<style>" + $scope.cssContent.toString() + "</style>");
+    }
+    if ($scope.jsContent) {
+      angular.element(tempElem).find("body").append("<script>" + $scope.jsContent.toString() + "</script>");
+    }
+    var hostData = angular.element(tempElem).html();
+    // tempElem.innerHTML = "";
+    console.log(hostData)
+  }
+
 })
 
 app.controller('DocsController', function($scope, $css) {
