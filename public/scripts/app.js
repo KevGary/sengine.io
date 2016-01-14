@@ -8,7 +8,7 @@ app.factory('httpFactory', function ($http, API_URL) {
     execute: execute
   }
   function hostHTML(code) {
-    return $http.post(API_URL + '/html', {"data": code});
+    return $http.post(API_URL + '/host', {"data": code});
   }
   function execute(code) {
     return $http.post(API_URL + '/execute', {"data": code});
@@ -146,11 +146,30 @@ app.controller('HostingController', function($scope, httpFactory, Upload, $css) 
     // console.log($scope.htmlContent);
     // console.log($scope.jsContent);
     // console.log($scope.cssContent);
-    var head = $scope.htmlContent.split('</head>')[0] + '\n ' + '<style>\n' + String($scope.cssContent) + '\n</style></head>';
-    var body = $scope.htmlContent.split('</body>')[0] + '\n' + '<script>\n' + String($scope.jsContent) + '\n</script></body>';
-
-    $scope.compiledHtmlContent = head + '\n' + body;
-
+    $scope.compiledHtmlContent = '';
+    if($scope.htmlContent) {
+      var head = $scope.htmlContent.split('</head>')[0];
+      var body = $scope.htmlContent.split('</head>')[1];
+    }
+    if($scope.cssContent) {
+      $scope.compiledHtmlContent += head + '\n ' + '<style>\n' + String($scope.cssContent) + '\n</style></head>';   
+    }
+    if($scope.jsContent) {
+      $scope.compiledHtmlContent += body + '\n' + '<script>\n' + String($scope.jsContent) + '\n</script></body></html>';    
+    }
+    if(!$scope.cssContent && !$scope.jsContent) {
+      $scope.compiledHtmlContent += $scope.htmlContent;
+    }
+    if(!$scope.cssContent && !$scope.jsContent && !$scope.htmlContent) {
+      $scope.compiledHtmlContent += 'no static content found'
+    }
+    console.log($scope.compiledHtmlContent);
+    setTimeout(function () {
+      $scope.$apply(function () {
+          $scope.showCode = true;
+      });
+    }, 0)
+    httpFactory.hostHTML($scope.compiledHtmlContent);
     // var tempElem = angular.element("<div>" + $scope.htmlContent + "</div>").css("display", "none");
     // // tempElem.style.display = "none";
     // // tempElem.innerHTML = $scope.htmlContent;
