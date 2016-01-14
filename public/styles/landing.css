@@ -9,23 +9,46 @@
 }
 
 .header-content h1 {
-  font-size: 4.5em;
+  font-size: 55px;
   font-family: 'Muli', sans-serif;
   position: relative;
-  left: 430px;
-  top: -30px;
+  padding-left: 90px;
+  top: -20px;
+  margin-bottom: 0;
 }
 
 .header-content h2 {
+  margin-top: 0;
   font-weight: bolder;
   font-family: 'Muli', sans-serif;
-  position: relative;
-  left: 360px;
 }
 
 .header-content p {
   font-family: 'Muli', sans-serif;
-  position: relative;
-  left: 475px;
-/*  top: -20px;
-*/}
+  font-size: 18px;
+  margin: 0;
+}
+
+.icon-content p {
+  font-family: 'Muli', sans-serif;
+  margin-top: 10px;
+}
+
+.text-warning {
+  color: rgb(115, 192, 58);
+}
+.text-warning:hover, .text-primary:hover, .text-danger:hover {
+  color: black;
+}
+
+.text-primary {
+  color: rgb(101, 185, 172);
+}
+
+.text-danger {
+  color: rgb(203, 81, 58);
+}
+
+.fa {
+  margin-top: 30px;
+}
