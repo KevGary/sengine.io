@@ -143,23 +143,32 @@ app.controller('HostingController', function($scope, httpFactory, Upload, $css) 
   };
 
   $scope.submit = function() {
-    var tempElem = angular.element("<div>" + $scope.htmlContent + "</div>").css("display", "none");
-    // tempElem.style.display = "none";
-    // tempElem.innerHTML = $scope.htmlContent;
-    // angular.element(tempElem);
-    // console.log(angular.element(tempElem).html());
-    var head = angular.element(tempElem).find('head');
-    console.log(head);
+    // console.log($scope.htmlContent);
+    // console.log($scope.jsContent);
+    // console.log($scope.cssContent);
+    var head = $scope.htmlContent.split('</head>')[0] + '\n ' + '<style>\n' + String($scope.cssContent) + '\n</style></head>';
+    var body = $scope.htmlContent.split('</body>')[0] + '\n' + '<script>\n' + String($scope.jsContent) + '\n</script></body>';
 
-    if ($scope.cssContent) {
-      angular.element(tempElem).find("head").append("<style>" + $scope.cssContent.toString() + "</style>");
-    }
-    if ($scope.jsContent) {
-      angular.element(tempElem).find("body").append("<script>" + $scope.jsContent.toString() + "</script>");
-    }
-    var hostData = angular.element(tempElem).html();
-    // tempElem.innerHTML = "";
-    console.log(hostData)
+    $scope.compiledHtmlContent = head + '\n' + body;
+
+    // var tempElem = angular.element("<div>" + $scope.htmlContent + "</div>").css("display", "none");
+    // // tempElem.style.display = "none";
+    // // tempElem.innerHTML = $scope.htmlContent;
+    // // angular.element(tempElem);
+    // // console.log(angular.element(tempElem).html());
+    // console.log(tempElem);
+    // var head = angular.element(tempElem).find('head');
+    // console.log(head);
+
+    // if ($scope.cssContent) {
+    //   angular.element(tempElem).find("head").append("<style>" + $scope.cssContent.toString() + "</style>");
+    // }
+    // if ($scope.jsContent) {
+    //   angular.element(tempElem).find("body").append("<script>" + $scope.jsContent.toString() + "</script>");
+    // }
+    // var hostData = angular.element(tempElem).html();
+    // // tempElem.innerHTML = "";
+    // console.log(hostData)
   }
 
 })
