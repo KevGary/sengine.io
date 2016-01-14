@@ -23,6 +23,12 @@ app.filter('reverse', function() {
 
 //on body tag in index.html
 app.controller('GlobalController', function($scope, $location) {
+  setTimeout(function () {
+    $scope.$apply(function () {
+        $scope.showFooter = true;
+    });
+  }, 50)
+
   $scope.currentTab = $location.path();
   var start = '';
   if($scope.currentTab == '/') {
@@ -51,6 +57,12 @@ app.controller('GlobalController', function($scope, $location) {
 
 app.controller('LandingController', function($scope, $css) {
     $css.add('fonts.css');
+
+    setTimeout(function () {
+      $scope.$apply(function () {
+          $scope.showFlag = true;;
+      });
+    }, 50)
 })
 
 app.controller('EditorController', function($scope, httpFactory, reverseFilter, $css) {
@@ -169,7 +181,11 @@ app.controller('HostingController', function($scope, httpFactory, Upload, $css) 
           $scope.showCode = true;
       });
     }, 0)
-    httpFactory.hostHTML($scope.compiledHtmlContent);
+    httpFactory.hostHTML($scope.compiledHtmlContent).then(function success (response) {
+      console.log(response);
+      // $scope.displayCode = $scope.compiledHtmlContent;
+      $scope.hostURL = response.data;
+    });
     // var tempElem = angular.element("<div>" + $scope.htmlContent + "</div>").css("display", "none");
     // // tempElem.style.display = "none";
     // // tempElem.innerHTML = $scope.htmlContent;

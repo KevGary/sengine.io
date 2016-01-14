@@ -8,6 +8,10 @@
   border: none;
 }
 
+.ng-hide-remove { 
+  animation: 0.5s fadeInUp ease;
+}
+
 .header-content h1 {
   font-size: 55px;
   font-family: 'Muli', sans-serif;
