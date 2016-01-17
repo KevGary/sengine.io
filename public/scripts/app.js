@@ -1,6 +1,6 @@
 var app = angular.module('sengineSite', ['ui.ace', 'ngMaterial', 'ngMessages', 'ngRoute', 'ngFileUpload', 'door3.css']);
 
-app.constant('API_URL', 'http://sengine.io');
+app.constant('API_URL', 'http://sengine.io/api/v1');
 
 app.factory('httpFactory', function ($http, API_URL) {
   return {
@@ -8,10 +8,10 @@ app.factory('httpFactory', function ($http, API_URL) {
     execute: execute
   }
   function hostHTML(code) {
-    return $http.post(API_URL + '/api/v1/host', {"data": code});
+    return $http.post(API_URL + '/host', {"data": code});
   }
   function execute(code) {
-    return $http.post(API_URL + '/api/v1/execute', {"data": code});
+    return $http.post(API_URL + '/execute', {"data": code});
   }
 });
 
