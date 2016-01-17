@@ -115,10 +115,10 @@ router.post('/api/v1/python', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('*', function(req, res, next) {
-  res.sendFile('index.html', {
-      root : __dirname + '/../public/'
-  })
-});
+// router.get('*', function(req, res, next) {
+//   res.sendFile('index.html', {
+//       root : __dirname + '/../public/'
+//   })
+// });
 
 module.exports = router;
