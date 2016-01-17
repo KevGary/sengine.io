@@ -110,9 +110,6 @@ router.post('/api/v1/python', function(req, res, next) {
   executionEnvironment('python', 'python', 'sample.py', 'import timeit' + "\n" + "start_time = timeit.default_timer()" + "\n" + req.body.data + "\n" + "print(timeit.default_timer() - start_time)", req, res);
 });
 
-router.post('/api/v1/python', function(req, res, next) {
-  executionEnvironment('python', 'python', 'sample.py', 'import timeit' + "\n" + "start_time = timeit.default_timer()" + "\n" + req.body.data + "\n" + "print(timeit.default_timer() - start_time)", req, res);
-});
 
 /* GET home page. */
 // router.get('*', function(req, res, next) {
