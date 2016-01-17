@@ -1,6 +1,6 @@
 var app = angular.module('sengineSite', ['ui.ace', 'ngMaterial', 'ngMessages', 'ngRoute', 'ngFileUpload', 'door3.css']);
 
-app.constant('API_URL', 'http://104.236.15.225:3080/api/v1');
+app.constant('API_URL', 'http://104.236.15.225:80/api/v1');
 
 app.factory('httpFactory', function ($http, API_URL) {
   return {
