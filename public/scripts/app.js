@@ -135,78 +135,78 @@ app.controller('EditorController', function($scope, httpFactory, reverseFilter, 
 
 })
 
-app.controller('HostingController', function($scope, httpFactory, Upload, $css) {
-  $css.add('fonts.css');
+// app.controller('HostingController', function($scope, httpFactory, Upload, $css) {
+//   $css.add('fonts.css');
 
-  setTimeout(function () {
-    $scope.$apply(function () {
-        $scope.showFlag = true;
-    });
-  }, 50)
+//   setTimeout(function () {
+//     $scope.$apply(function () {
+//         $scope.showFlag = true;
+//     });
+//   }, 50)
 
-  $scope.showHTMLContent = function($fileContent){
-    $scope.htmlContent = $fileContent;
-  };
-  $scope.showJSContent = function($fileContent){
-    $scope.jsContent = $fileContent;
-  };
-  $scope.showCSSContent = function($fileContent){
-    $scope.cssContent = $fileContent;
-  };
+//   $scope.showHTMLContent = function($fileContent){
+//     $scope.htmlContent = $fileContent;
+//   };
+//   $scope.showJSContent = function($fileContent){
+//     $scope.jsContent = $fileContent;
+//   };
+//   $scope.showCSSContent = function($fileContent){
+//     $scope.cssContent = $fileContent;
+//   };
 
-  $scope.submit = function() {
-    // console.log($scope.htmlContent);
-    // console.log($scope.jsContent);
-    // console.log($scope.cssContent);
-    $scope.compiledHtmlContent = '';
-    if($scope.htmlContent) {
-      var head = $scope.htmlContent.split('</head>')[0];
-      var body = $scope.htmlContent.split('</head>')[1];
-    }
-    if($scope.cssContent) {
-      $scope.compiledHtmlContent += head + '\n ' + '<style>\n' + String($scope.cssContent) + '\n</style></head>';   
-    }
-    if($scope.jsContent) {
-      $scope.compiledHtmlContent += body + '\n' + '<script>\n' + String($scope.jsContent) + '\n</script></body></html>';    
-    }
-    if(!$scope.cssContent && !$scope.jsContent) {
-      $scope.compiledHtmlContent += $scope.htmlContent;
-    }
-    if(!$scope.cssContent && !$scope.jsContent && !$scope.htmlContent) {
-      $scope.compiledHtmlContent += 'no static content found'
-    }
-    console.log($scope.compiledHtmlContent);
-    setTimeout(function () {
-      $scope.$apply(function () {
-          $scope.showCode = true;
-      });
-    }, 0)
-    httpFactory.hostHTML($scope.compiledHtmlContent).then(function success (response) {
-      console.log(response);
-      // $scope.displayCode = $scope.compiledHtmlContent;
-      $scope.hostURL = response.data;
-    });
-    // var tempElem = angular.element("<div>" + $scope.htmlContent + "</div>").css("display", "none");
-    // // tempElem.style.display = "none";
-    // // tempElem.innerHTML = $scope.htmlContent;
-    // // angular.element(tempElem);
-    // // console.log(angular.element(tempElem).html());
-    // console.log(tempElem);
-    // var head = angular.element(tempElem).find('head');
-    // console.log(head);
+//   $scope.submit = function() {
+//     // console.log($scope.htmlContent);
+//     // console.log($scope.jsContent);
+//     // console.log($scope.cssContent);
+//     $scope.compiledHtmlContent = '';
+//     if($scope.htmlContent) {
+//       var head = $scope.htmlContent.split('</head>')[0];
+//       var body = $scope.htmlContent.split('</head>')[1];
+//     }
+//     if($scope.cssContent) {
+//       $scope.compiledHtmlContent += head + '\n ' + '<style>\n' + String($scope.cssContent) + '\n</style></head>';   
+//     }
+//     if($scope.jsContent) {
+//       $scope.compiledHtmlContent += body + '\n' + '<script>\n' + String($scope.jsContent) + '\n</script></body></html>';    
+//     }
+//     if(!$scope.cssContent && !$scope.jsContent) {
+//       $scope.compiledHtmlContent += $scope.htmlContent;
+//     }
+//     if(!$scope.cssContent && !$scope.jsContent && !$scope.htmlContent) {
+//       $scope.compiledHtmlContent += 'no static content found'
+//     }
+//     console.log($scope.compiledHtmlContent);
+//     setTimeout(function () {
+//       $scope.$apply(function () {
+//           $scope.showCode = true;
+//       });
+//     }, 0)
+//     httpFactory.hostHTML($scope.compiledHtmlContent).then(function success (response) {
+//       console.log(response);
+//       // $scope.displayCode = $scope.compiledHtmlContent;
+//       $scope.hostURL = response.data;
+//     });
+//     // var tempElem = angular.element("<div>" + $scope.htmlContent + "</div>").css("display", "none");
+//     // // tempElem.style.display = "none";
+//     // // tempElem.innerHTML = $scope.htmlContent;
+//     // // angular.element(tempElem);
+//     // // console.log(angular.element(tempElem).html());
+//     // console.log(tempElem);
+//     // var head = angular.element(tempElem).find('head');
+//     // console.log(head);
 
-    // if ($scope.cssContent) {
-    //   angular.element(tempElem).find("head").append("<style>" + $scope.cssContent.toString() + "</style>");
-    // }
-    // if ($scope.jsContent) {
-    //   angular.element(tempElem).find("body").append("<script>" + $scope.jsContent.toString() + "</script>");
-    // }
-    // var hostData = angular.element(tempElem).html();
-    // // tempElem.innerHTML = "";
-    // console.log(hostData)
-  }
+//     // if ($scope.cssContent) {
+//     //   angular.element(tempElem).find("head").append("<style>" + $scope.cssContent.toString() + "</style>");
+//     // }
+//     // if ($scope.jsContent) {
+//     //   angular.element(tempElem).find("body").append("<script>" + $scope.jsContent.toString() + "</script>");
+//     // }
+//     // var hostData = angular.element(tempElem).html();
+//     // // tempElem.innerHTML = "";
+//     // console.log(hostData)
+//   }
 
-})
+// })
 
 app.controller('DocsController', function($scope, $css) {
   $css.add('fonts.css');
@@ -284,10 +284,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
       templateUrl: '/partials/editor.html',
       controller: 'EditorController'
     })
-    .when('/hosting', {
-      templateUrl: '/partials/hosting.html',
-      controller: 'HostingController'
-    })
+    // .when('/hosting', {
+    //   templateUrl: '/partials/hosting.html',
+    //   controller: 'HostingController'
+    // })
     .when('/docs', {
       templateUrl: '/partials/docs.html',
       controller: 'DocsController'
