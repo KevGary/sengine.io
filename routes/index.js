@@ -59,8 +59,9 @@ function executionEnvironment (language, command, fileName, data, req, res) {
           console.log('stderr:  ' + response.stderr)
           console.log("stdout:  " + response.stdout)
           res.send({
-            "stdout": response.stdout,
+            "stdout": response.stdout.split('\nruntime: ')[0],
             "stderr": response.stderr,
+            "runtime": response.stdout.split('\nruntime: ')[1],
             "language": language            
           });
           // console.log(res._headers['x-response-time']);
@@ -88,7 +89,7 @@ router.post('/api/v1/execute', function (req, res, next) {
   if (detectLang(req.body.data) == 'JavaScript') {
     executionEnvironment('javascript', 'node', 'sample.js', ('console.time("runtime");\n' + req.body.data + '\nconsole.timeEnd("runtime");'), req, res);
   } else if (detectLang(req.body.data) == 'Ruby') { 
-    executionEnvironment('ruby', 'ruby', 'sample.rb', ("a = Time.now" + "\n" + req.body.data + "\n" + "puts (Time.now - a)"), req, res);
+    executionEnvironment('ruby', 'ruby', 'sample.rb', ("a = Time.now" + "\n" + req.body.data + "\n" + "puts 'runtime' + (Time.now - a)"), req, res);
   } else if (detectLang(req.body.data) == 'Python') { 
     executionEnvironment('python', 'python', 'sample.py', 'import timeit' + "\n" + "start_time = timeit.default_timer()" + "\n" + req.body.data + "\n" + "print(timeit.default_timer() - start_time)", req, res);
   } else {
@@ -112,10 +113,10 @@ router.post('/api/v1/python', function(req, res, next) {
 
 
 /* GET home page. */
- router.get('*', function(req, res, next) {
-   res.sendFile('index.html', {
-       root : __dirname + '/../public/'
-   })
+router.get('*', function(req, res, next) {
+  res.sendFile('index.html', {
+    root : __dirname + '/../public/'
+  }) 
 });
 
 module.exports = router;
